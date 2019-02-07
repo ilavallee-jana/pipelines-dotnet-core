@@ -8,9 +8,9 @@ pool:
 variables:
   buildConfiguration: 'Release'
 
-- script: dotnet restore
 
 steps:
+- script: dotnet restore
 - script: |
     dotnet build --configuration $(buildConfiguration)
     dotnet test dotnetcore-tests --configuration $(buildConfiguration) --logger trx
